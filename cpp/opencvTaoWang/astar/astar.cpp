@@ -25,7 +25,7 @@ void Astar::search(Node* startPos, Node* endPos)
 	this->startPos = startPos;
 	this->endPos = endPos;
 	openList.push_back(startPos);
-	//Ö÷ÒªÊÇÕâ¿é£¬°Ñ¿ªÊ¼µÄ½Úµã·ÅÈëopenlistºó¿ªÊ¼²éÕÒÅÔ±ßµÄ8¸ö½Úµã£¬Èç¹û×ø±ê³¬³¤·¶Î§»òÔÚcloselist¾Íreturn Èç¹ûÒÑ¾­´æÔÚopenlist¾Í¶Ô±Èµ±Ç°½Úµãµ½±éÀúµ½µÄÄÇ¸ö½ÚµãµÄGÖµºÍµ±Ç°½Úµãµ½Ô­À´¸¸½ÚµãµÄGÖµ Èç¹ûÔ­À´µÄGÖµ±È½Ï´ó ²»ÓÃ¹Ü ·ñÔòÖØĞÂ¸³ÖµGÖµ ¸¸½Úµã ºÍf Èç¹ûÊÇĞÂ½Úµã ¼ÓÈëµ½openlistÖ±µ½opellistÎª¿Õ»òÕÒµ½ÖÕµã
+	//ä¸»è¦æ˜¯è¿™å—ï¼ŒæŠŠå¼€å§‹çš„èŠ‚ç‚¹æ”¾å…¥openliståå¼€å§‹æŸ¥æ‰¾æ—è¾¹çš„8ä¸ªèŠ‚ç‚¹ï¼Œå¦‚æœåæ ‡è¶…é•¿èŒƒå›´æˆ–åœ¨closelistå°±return å¦‚æœå·²ç»å­˜åœ¨openlistå°±å¯¹æ¯”å½“å‰èŠ‚ç‚¹åˆ°éå†åˆ°çš„é‚£ä¸ªèŠ‚ç‚¹çš„Gå€¼å’Œå½“å‰èŠ‚ç‚¹åˆ°åŸæ¥çˆ¶èŠ‚ç‚¹çš„Gå€¼ å¦‚æœåŸæ¥çš„Gå€¼æ¯”è¾ƒå¤§ ä¸ç”¨ç®¡ å¦åˆ™é‡æ–°èµ‹å€¼Gå€¼ çˆ¶èŠ‚ç‚¹ å’Œf å¦‚æœæ˜¯æ–°èŠ‚ç‚¹ åŠ å…¥åˆ°openlistç›´åˆ°opellistä¸ºç©ºæˆ–æ‰¾åˆ°ç»ˆç‚¹
 	while (openList.size() > 0)
 	{
 		current = openList[0];
@@ -72,14 +72,14 @@ void Astar::checkPoit(int x, int y, Node* father, int g)
 }
 void Astar::NextStep(Node* current)
 {
-	checkPoit(current->x - 1, current->y, current, WeightW);//×ó
-	checkPoit(current->x + 1, current->y, current, WeightW);//ÓÒ
-	checkPoit(current->x, current->y + 1, current, WeightW);//ÉÏ
-	checkPoit(current->x, current->y - 1, current, WeightW);//ÏÂ
-	checkPoit(current->x - 1, current->y + 1, current, WeightWH);//×óÉÏ
-	checkPoit(current->x - 1, current->y - 1, current, WeightWH);//×óÏÂ
-	checkPoit(current->x + 1, current->y - 1, current, WeightWH);//ÓÒÏÂ
-	checkPoit(current->x + 1, current->y + 1, current, WeightWH);//ÓÒÉÏ
+	checkPoit(current->x - 1, current->y, current, WeightW);//å·¦
+	checkPoit(current->x + 1, current->y, current, WeightW);//å³
+	checkPoit(current->x, current->y + 1, current, WeightW);//ä¸Š
+	checkPoit(current->x, current->y - 1, current, WeightW);//ä¸‹
+	checkPoit(current->x - 1, current->y + 1, current, WeightWH);//å·¦ä¸Š
+	checkPoit(current->x - 1, current->y - 1, current, WeightWH);//å·¦ä¸‹
+	checkPoit(current->x + 1, current->y - 1, current, WeightWH);//å³ä¸‹
+	checkPoit(current->x + 1, current->y + 1, current, WeightWH);//å³ä¸Š
 }
 int Astar::isContains(vector<Node*>* Nodelist, int x, int y)
 {

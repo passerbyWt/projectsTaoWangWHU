@@ -11,9 +11,9 @@ using namespace std;
 typedef struct Node
 {
 	int x, y;
-	int g; //ÆğÊ¼µãµ½µ±Ç°µãÊµ¼Ê´ú¼Û
-	int h;//µ±Ç°½Úµãµ½Ä¿±ê½Úµã×î¼ÑÂ·¾¶µÄ¹À¼Æ´ú¼Û
-	int f;//¹À¼ÆÖµ
+	int g; //èµ·å§‹ç‚¹åˆ°å½“å‰ç‚¹å®é™…ä»£ä»·
+	int h;//å½“å‰èŠ‚ç‚¹åˆ°ç›®æ ‡èŠ‚ç‚¹æœ€ä½³è·¯å¾„çš„ä¼°è®¡ä»£ä»·
+	int f;//ä¼°è®¡å€¼
 	Node* father;
 	Node(int x, int y)
 	{
@@ -52,8 +52,8 @@ public:
 	vector<Node*> closeList;
 	Node* startPos;
 	Node* endPos;
-	static const int WeightW = 10;// Õı·½ÏòÏûºÄ
-	static const int WeightWH = 14;//´òĞ±·½ÏòµÄÏûºÄ
+	static const int WeightW = 10;// æ­£æ–¹å‘æ¶ˆè€—
+	static const int WeightWH = 14;//æ‰“æ–œæ–¹å‘çš„æ¶ˆè€—
 	static const int row = 6;
 	static const int col = 8;
 };
